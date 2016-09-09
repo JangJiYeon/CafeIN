@@ -34,7 +34,6 @@
                     </c:if>
                     
                      
-                  
                     
                  <c:if test="${!empty u_uid}">
                      <li class="topbar-devider"></li>

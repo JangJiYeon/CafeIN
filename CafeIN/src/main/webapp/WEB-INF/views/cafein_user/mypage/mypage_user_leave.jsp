@@ -137,7 +137,7 @@
 						<div class="col-md-1">&nbsp;</div>
 						
 		                <div class="col-md-10" style="margin-top:5%;">
-		                    <form id="sky-form4" class="log-reg-block sky-form col-md-12" novalidate="novalidate">
+		                    <form action="mypage_user_leave_check.do" id="sky-form4" class="log-reg-block sky-form col-md-12" novalidate="novalidate">
 		                        <h2 class="korean-font">정말로 탈퇴하시겠습니까?</h2>
 		                        
 		                        <div class="login-input reg-input">
@@ -152,7 +152,7 @@
 			                            
 										 <div style="text-align: center;">
 				                        	<button class="btn-u btn-u-default btn-block margin-bottom-20 korean-font mypage_user_leave_btn" 
-				                        			type="submit" onclick="location.href='mypage_user_leave_check.do'">회원탈퇴요청</button>
+				                        			type="submit">회원탈퇴요청</button>
 			                        		<a class="btn-u btn-block margin-bottom-20 korean-font mypage_user_leave_btn" 
 			                        			href="mypage_user_modify_check.do">회원탈퇴요청 취소</a>
 										</div>

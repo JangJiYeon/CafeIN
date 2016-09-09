@@ -118,7 +118,6 @@
             
               <button type="submit" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></button>
             
-               </form:form>
             
             
             <ul class="login-navigation">
@@ -126,13 +125,15 @@
                 <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
             </ul>
             
+               </form:form>
+            
         </div>
         
         
         
         <!-- Forgot Password  --------------------------------------------->
        
-           <div class="lc-block" id="l-forget-password">
+              <div class="lc-block" id="l-forget-password">
         
        
             <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
