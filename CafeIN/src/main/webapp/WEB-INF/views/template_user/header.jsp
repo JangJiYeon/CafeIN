@@ -17,11 +17,24 @@
             <!-- Topbar -->
             <div class="topbar">
                 <ul class="loginbar pull-right">
+                
+                    
+                    <c:if test="${empty u_uid}">
                     <li><a href="${pageContext.request.contextPath}/cafein_user/user/login.do">Login</a></li>   
                     <li class="topbar-devider"></li>   
                     
                     <li><a href="${pageContext.request.contextPath}/cafein_user/user/register.do">Register</a></li> 
                    
+                    
+                    </c:if>
+                    
+                    <c:if test="${!empty u_uid}">
+                    <li><a href="${pageContext.request.contextPath}/cafein_user/user/logout.do">Logout</a></li>   
+                   
+                    </c:if>
+                    
+                     
+                  
                     
                  <c:if test="${!empty u_uid}">
                      <li class="topbar-devider"></li>

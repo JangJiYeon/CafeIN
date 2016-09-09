@@ -7,4 +7,4 @@ create table u_user (
   u_level number default 0
 );
 
-create sequence u_user_seq;
+create sequence user_seq;

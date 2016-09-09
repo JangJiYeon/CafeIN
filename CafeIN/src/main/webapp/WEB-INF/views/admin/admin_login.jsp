@@ -25,15 +25,9 @@
 	
 	 <body class="login-content">
  <!-- Login --------------------------------->
-  <c:choose>
-       <c:when test="${currentAdminPage == 1 || currentAdminPage == 2}">
-           <div class="lc-block" id="l-login">
-       </c:when>
-  <c:otherwise>
-            <div class="lc-block toggled" id="l-login">
-       </c:otherwise>
-   </c:choose>
  
+            <div class="lc-block toggled" id="l-login">
+     
         <form:form action="adminLogin.do" commandName="command">
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-person"></i></span>
@@ -76,17 +70,6 @@
         
         
         <!-- Register ----------------------------------- -->
-        
-         <c:choose>
-       <c:when test="${currentAdminPage == 1}">
-           <div class="lc-block toggled" id="l-register">
-       </c:when>
-  <c:otherwise>
-              <div class="lc-block" id="l-register">
-        
-       </c:otherwise>
-   </c:choose>
- 
         
         
         <div class="lc-block" id="l-register">
@@ -135,6 +118,7 @@
             
               <button type="submit" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></button>
             
+               </form:form>
             
             
             <ul class="login-navigation">
@@ -142,24 +126,14 @@
                 <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
             </ul>
             
-               </form:form>
-            
         </div>
         
         
         
         <!-- Forgot Password  --------------------------------------------->
        
-              <c:choose>
-       <c:when test="${currentAdminPage == 2}">
-           <div class="lc-block toggled" id="l-forget-password">
-       </c:when>
-  <c:otherwise>
-              <div class="lc-block" id="l-forget-password">
+           <div class="lc-block" id="l-forget-password">
         
-       </c:otherwise>
-   </c:choose>
- 
        
             <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
             
