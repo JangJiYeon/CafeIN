@@ -1,0 +1,96 @@
+/* Add here all your css styles (customizations) */
+/*-----------------------------------
+   	Font Import From Google Fonts
+  -----------------------------------*/
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,300,500);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+
+/*=============================================
+                font : JiYeon
+===============================================*/
+
+.korean-font-bold {
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: bold;
+}
+
+.korean-font {
+    font-family: initial !important;
+    font-style: normal;
+    font-weight: normal !important;
+}
+
+.korean-font-bold2 {
+  font-family: initial !important;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.read-more {
+	border-bottom:1px solid #e74c3c;
+	color:#e74c3c;
+	font-style:italic;
+	font-size:13px;
+	text-decoration:none !important;
+}
+.read-more:hover,
+.read-more:visited,
+.read-more:focus {
+	border-bottom:1px solid #e74c3c;
+	color:#e74c3c;
+	font-style:italic;
+	font-size:13px;
+	text-decoration:none !important;
+}
+.likeRank-custom-menuName {
+	color:#888;
+	font-size:15px;
+	font-weight:bold !important;
+	text-decoration:none !important;
+}
+.likeRank-custom-menuName:hover,
+.likeRank-custom-menuName:visited,
+.likeRank-custom-menuName:focus {
+	color:#888;
+	font-size:15px;
+	font-weight:bold !important;
+	text-decoration:none !important;
+}
+.likeRank1-custom-menuName{
+	color:#333 !important;
+	font-size:22px !important;
+	font-weight:bold !important;
+	text-decoration:none !important;
+}
+.likeRank1-custom-menuName:hover,
+.likeRank1-custom-menuName:visited,
+.likeRank1-custom-menuName:focus {
+	color:#333 !important;
+	font-size:22px !important;
+	font-weight:bold !important;
+	text-decoration:none !important;
+}
+.likeRank-menuName {
+	color:#333 !important;
+	font-size:15px !important;
+	font-weight:bold !important;
+	text-decoration:none !important;
+	margin:10px 10px 5px 10px !important;
+}
+.mypage_user_leave_btn {
+	margin-bottom: 0px;
+	width:30%;
+	text-decoration:none !important;
+	color: white !important;
+}
+.mypage_user_leave_btn:hover {
+	margin-bottom: 0px;
+	width:30%;
+	text-decoration:none !important;
+	color: white !important;
+}

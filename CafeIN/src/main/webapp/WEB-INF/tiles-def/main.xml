@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+
+
+
+    <definition name="main" template="/WEB-INF/views/template_user/layout.jsp">
+    	<put-attribute name="title" value="CafeIn"/>
+    	<put-attribute name="header" value="/WEB-INF/views/template_user/header.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/main/main.jsp"/>
+    	<put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/layer-slider/layerslider/css/layerslider.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/blog.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/layer-slider/layerslider/js/greensock.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/layer-slider/layerslider/js/layerslider.transitions.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/layer-slider/layerslider/js/layerslider.kreaturamedia.jquery.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/layer-slider.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/main.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    
+    <definition name="pageError" extends="main">
+		<put-attribute name="title" value="에러페이지"/>
+		<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
+	</definition>
+	
+	
+	<!-- 
+	
+	
+	로그인 페이지.
+	<definition name="memberLogin" extends="main">
+		<put-attribute name="header" value="/WEB-INF/views/template_user/headerLogin.jsp"/>
+		
+	</definition>
+
+ -->
+	
+    
+    <!-- 컨트롤러에서 반환할때 franchise_main 딱 이렇게만 명시해야함 -->
+    <definition name="franchise_main" extends="main">
+    	<!-- <put-attribute name="title" value="CafeIn"/>
+    	<put-attribute name="header" value="/WEB-INF/views/template_user/header.jsp"/> -->
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/franchise/franchise_main.jsp"/>
+    	<!-- <put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/> -->
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/portfolio-v1.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/franchise_main.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="franchise_detail" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/franchise/franchise_detail.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/blog.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery.parallax.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/counter/waypoints.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/counter/jquery.counterup.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/franchise_detail.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="private_main" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/private/private_main.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+        	<!-- 모달 스타일 -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/blog.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/page_search.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+			<!-- 모달 유효성 체크 -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<!-- 모달 유효성 체크 -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/contact.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/private_main.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="private_detail" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/private/private_detail.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/z_feature_google_map.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/blog.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"/>
+			<!-- 구글 맵에 필요 -->
+        	<add-attribute value="http://maps.google.com/maps/api/js?sensor=true"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/gmap/gmap.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"/>
+        	<!-- 모달 유효성 체크 -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/pages/page_contacts.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/private_detail.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="customizing_main" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/customizing/customizing_main.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/page_search.css"/>
+        	<!-- CSS Theme -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/theme-skins/dark.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/cube-portfolio/cube-portfolio-4.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/customizing_main.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <!-- 확인필요 -->
+    
+    <definition name="customizing_detail" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/customizing/customizing_detail.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/blog.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/login.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/contact.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/customizing_detail.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="login" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/user/login.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/log-reg-v3.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        	<!--  CSS login style    -->
+	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_login.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_contact_form.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/login.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="register" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/user/register.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/log-reg-v3.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_registration.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/register.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/confirmId.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="qna" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/qna/qna.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/page_contact.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="http://maps.google.com/maps/api/js?sensor=true"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/gmap/gmap.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/login.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/contact.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/pages/page_contacts.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/qna.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="notice" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/notice/notice.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/page_contact.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/notice.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_user_modify_check" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_user_modify_check.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/log-reg-v3.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_login.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_contact_form.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_user_modify_check.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_user_modify" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_user_modify.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/log-reg-v3.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_login.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_contact_form.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_registration.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_user_modify.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_user_leave_check" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_user_leave_check.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/log-reg-v3.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_login.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_contact_form.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_registration.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_user_leave_check.js"/>
+        </put-list-attribute>
+    </definition>
+        
+    <definition name="mypage_user_leave" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_user_leave.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Page Style -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/pages/log-reg-v3.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_login.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_contact_form.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/forms/page_registration.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_user_leave.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_like_menu" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_like_menu.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+			<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/mouse-wheel.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_like_menu.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_like_cafe" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_like_cafe.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+			<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/mouse-wheel.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_like_cafe.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_bookmark_franchise" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_bookmark_franchise.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+			<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/mouse-wheel.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_bookmark_franchise.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_bookmark_private" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_bookmark_private.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+			<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/mouse-wheel.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_bookmark_private.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="mypage_bookmark_customMenu" extends="main">
+    	<put-attribute name="body" value="/WEB-INF/views/cafein_user/mypage/mypage_bookmark_customMenu.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<!-- Favicon -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/favicon.ico"/>
+        	<!-- Web Fonts -->
+        	<add-attribute value="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"/>
+        	<!-- CSS Global Compulsory -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/shop.style.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/style.css"/>
+        	<!-- CSS Header and Footer -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/headers/header-default.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/footers/footer-v1.css"/>
+			<!-- CSS Implementing Plugins -->        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/animate.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/line-icons/line-icons.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/font-awesome/css/font-awesome.min.css"/>
+
+			<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css"/>
+        	<!-- CSS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<!-- JS Global Compulsory -->	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/jquery/jquery-migrate.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/bootstrap/js/bootstrap.min.js"/>
+        	<!-- JS Implementing Plugins -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/back-to-top.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/smoothScroll.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"/>
+        	<!-- JS Customization -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/custom.js"/>
+        	<!-- JS Page Level -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/app.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/plugins/mouse-wheel.js"/>
+        	<!-- JS main jquery -->
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/jquery/mypage_bookmark_customMenu.js"/>
+        </put-list-attribute>
+    </definition>
+    
+</tiles-definitions>
+
+
+
+
+
+
+
+

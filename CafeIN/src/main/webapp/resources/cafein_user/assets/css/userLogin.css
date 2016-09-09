@@ -1,0 +1,9 @@
+.error-color{
+  display: block;
+	color: #ee9393  !important;
+	padding: 0 1px;
+	font-size: 11px;
+	margin-top: 4px;
+	line-height: 15px;
+	font-style: normal;
+}

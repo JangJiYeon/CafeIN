@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+
+
+     <definition name="admin_login" template="/WEB-INF/views/admin/admin_login.jsp" >
+    	
+    	<put-list-attribute name="cssList">
+    		 <!-- Vendor CSS -->
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/animate-css/animate.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/sweet-alert/sweet-alert.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/material-icons/material-design-iconic-font.min.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/socicon/socicon.min.css"/>
+        	
+        	
+        <!-- CSS -->
+        <add-attribute value="/CafeIN/resources/cafein_admin/css/app.min.1.css"/>
+        <add-attribute value="/CafeIN/resources/cafein_admin/css/app.min.2.css"/>
+        	
+       	<!--  CSS login style    -->
+		<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/css/custom.css"/>
+        	
+        	
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_admin/js/jquery-2.1.1.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/js/bootstrap.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/waves/waves.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/js/functions.js"/>
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_user/assets/js/confirmId.js"/>
+        
+        	
+        </put-list-attribute>
+    </definition>
+    
+
+
+
+   <definition name="adminMain" template="/WEB-INF/views/template_admin/layout.jsp">
+    	<put-attribute name="title" value="wedding 관리자"/>
+    	<put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
+    	<put-attribute name="menu" value="/WEB-INF/views/template_admin/menu.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/admin/home.jsp"/>
+    </definition>
+    
+    
+
+    <definition name="memberManagement" extends="adminMain">
+    	<put-attribute name="body" value="/WEB-INF/views/admin/memberManagement.jsp"/>
+    	
+    	<put-list-attribute name="cssList">
+    		
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/bootgrid/jquery.bootgrid.min.css"/>
+        	
+        	
+        <!-- CSS -->
+        <add-attribute value="/CafeIN/resources/cafein_admin/css/app.min.1.css"/>
+        <add-attribute value="/CafeIN/resources/cafein_admin/css/app.min.2.css"/>
+        
+        	
+       	<!--  CSS YJ style    -->
+		<add-attribute value="/CafeIN/resources/cafein_user/assets/css/userLogin.css"/>
+		<add-attribute value="/CafeIN/resources/cafein_admin/css/adminYJ.css"/>
+		
+        	
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/nicescroll/jquery.nicescroll.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/bootgrid/jquery.bootgrid.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/waves/waves.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/bootstrap-growl/bootstrap-growl.min.js"/>
+        	<add-attribute value="/CafeIN/resources/cafein_admin/vendors/sweet-alert/sweet-alert.min.js"/>
+        	
+      		<add-attribute value="/CafeIN/resources/cafein_admin/js/admin_memberManagement.js"/>
+        	
+        </put-list-attribute>
+    </definition>
+    
+</tiles-definitions>
+
+
+
+
+
+
+
+
