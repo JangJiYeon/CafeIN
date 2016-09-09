@@ -28,6 +28,8 @@
  
             <div class="lc-block toggled" id="l-login">
      
+      <span id ="message_1"></span>
+     
         <form:form action="adminLogin.do" commandName="command">
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-person"></i></span>
@@ -73,37 +75,35 @@
         
         
         <div class="lc-block" id="l-register">
+         <span id ="message_2"></span>
         
-         <form:form action="adminRegister.do" commandName="command">
+         <form action="adminRegister.do" method="post" id="admin_registerform">
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-person"></i></span>
                 <div class="fg-line">
-                    <form:input path="u_name"  type="text" placeholder="Username" name="u_name" class="form-control" />
+                    <input type="text" id="u_name" placeholder="Username" name="u_name" class="form-control" />
                 </div>
-                <form:errors path="u_name" class="error-color" />
+              
             </div>
             
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-mail"></i></span>
                 <div class="fg-line">
-                    <form:input path="u_email" placeholder="Email" name="u_email" class="form-control"/>
+                       <input type="text" id="u_email" placeholder="Email" name="u_email" class="form-control"/>
                     
                 </div>
             </div>
              
-                <form:errors path="u_email" class="error-color" />
-               
-	          
 	      
             
             
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-accessibility"></i></span>
                 <div class="fg-line">
-                   <form:password path="u_password" placeholder="Password" name="u_password" class="form-control" />
+                   <input type="password" id="u_password" placeholder="Password" name="u_password" class="form-control" />
                
                 </div>
-                 <form:errors path="u_password" class="error-color" />
+                 
             </div>
             
             <div class="clearfix"></div>
@@ -116,7 +116,8 @@
                 </label>
             </div> -->
             
-              <button type="submit" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></button>
+                <button type="submit" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></button>
+            
             
             
             
@@ -125,7 +126,7 @@
                 <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
             </ul>
             
-               </form:form>
+               </form>
             
         </div>
         
