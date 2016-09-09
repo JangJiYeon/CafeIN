@@ -51,8 +51,8 @@ private Logger log = Logger.getLogger(this.getClass());
 		String uid = memberService.selectUid(memberCommand.getU_email());
 		log.debug("가져온 uid 값 : " + uid);
 		
-		if(uid != null && !uid.isEmpty()){
-			result.rejectValue("u_email", "existentId"); 
+		if(uid == null || uid.isEmpty()){
+			result.rejectValue("u_email", "NonexistentId"); 
 			
 			return form();
 		}
